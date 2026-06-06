@@ -3,21 +3,11 @@ pipeline {
 
     stages {
 
-        stage('Pull Latest Code') {
-            steps {
-                sh '''
-                git config --global --add safe.directory /workspace/HomemadeMeals
-
-                cd /workspace/HomemadeMeals
-                git pull origin main
-                '''
-            }
-        }
-
         stage('Deploy') {
             steps {
                 sh '''
-                cd /workspace/HomemadeMeals
+                pwd
+                ls -la
 
                 docker compose down
                 docker compose build

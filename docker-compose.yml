@@ -3,12 +3,14 @@ version: '3.8'
 services:
   mongodb:
     image: mongo:latest
+    restart: unless-stopped
     ports:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
 
   server:
+    restart: unless-stopped
     build: ./server
     ports:
       - "5001:5001"
@@ -21,7 +23,8 @@ services:
   client:
     build: ./client
     ports:
-      - "8080:80"
+      - "8081:80"
+    restart: unless-stopped
     depends_on:
       - server
 

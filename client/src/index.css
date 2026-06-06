@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tiffin-green: #2D5A27;
+  --color-tiffin-orange: #EB8A14;
+  --color-tiffin-cream: #FDF9F0;
+  --color-tiffin-white: #FFFFFF;
+  
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-poppins);
+  @apply bg-tiffin-cream text-gray-800;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
